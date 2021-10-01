@@ -88,3 +88,5 @@ import math, random
 #     else:
 #         print("Bextinizi bir daha sinayin")
 # print(texmin)
+
+# 
