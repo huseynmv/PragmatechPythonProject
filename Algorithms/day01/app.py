@@ -113,6 +113,8 @@ else:
     print ("bu meyve menuda yoxdur")
 
 
+# register form
+
 ad = input("Adinizi daxil edin: ")
 if len(ad)>3 and len(ad)<11:
     soyad = input('Soyadinizi daxil edin: ')
