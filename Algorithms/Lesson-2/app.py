@@ -67,7 +67,7 @@ import math, random
 #     print('kvadrat tenliyin koku yoxdur')
 # elif d==0:
 #     x1=x2=(-b)/(2*a)
-#     print('x1 = x2 = ',x1)
+#     print("Tenliyin kokleri eynidir ",x1)
 
 
 # Random bir rəqəm götürsün proqram 1-4 aralığında. İstifadəçidən həmin rəqəmi təxmin etməyi istəyin. Hər doğru təxmin etdikcə istifadəçi bir xal qazansın. 5 xala çatanda istifadəçinin 5 xala çatması üçün etdiyi cəhdlərin sayını çapa verin.
