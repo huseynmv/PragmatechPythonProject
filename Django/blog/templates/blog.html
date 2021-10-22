@@ -1,1 +1,15 @@
 <h2>My blogs</h2>
+
+{% for blog in blogs %}
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Title: {{blog.title}}</h5>
+        <h5 class="card-title">Author: {{blog.author}}</h5>
+        <p class="card-text">Info: {{blog.text}}</p>
+        <a href="" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+    <br><br>
+
+    {% endfor %}
