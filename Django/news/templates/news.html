@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@
     
     {% for nws in news %}
     <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{nws.img.url}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{nws.title}}</h5>
           <p class="card-text">{{nws.description}}</p>

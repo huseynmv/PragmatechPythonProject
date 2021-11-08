@@ -6,6 +6,7 @@ class News(models.Model):
     title = models.CharField(max_length=63, blank=True, null=True)
     description = models.CharField(max_length=63, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    img = models.ImageField(upload_to="news/", null=True)
     
     class Meta:
         verbose_name='news'
