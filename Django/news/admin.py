@@ -4,6 +4,6 @@ from .models import News, Tag
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
-    fields = ('title','description','news_tag','img','slug')
+    fields = ('title','description','news_tag','img',)
 admin.site.register(Tag)
 
