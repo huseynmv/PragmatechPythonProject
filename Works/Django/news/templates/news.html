@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static custom_filter custom_tag  %}
 {% block content %}
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +34,10 @@
         <img src="{{nws.img.url}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{nws.title|truncatechars:5}}</h5>
-          <p class="card-text">{{nws.description}}</p>
+          <p class="card-text">{{nws.description|uppercase}}</p>
           <p class="card-text">{{nws.created_at|date:"M Y"}}</p>
+          {% current_time "%Y-%m-%d %I:%M %p" as time %}
+          <p class="text-danger">custom date tag : {{ time }}.</p>
           <a href="{{ nws.get_absolute_url }}" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
