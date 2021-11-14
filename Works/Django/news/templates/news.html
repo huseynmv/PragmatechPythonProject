@@ -27,15 +27,20 @@
   <body>
     
     {% for nws in news %}
+
+    <h3>News - {{ forloop.counter }}</h3>
+
     <div class="card" style="width: 18rem;">
         <img src="{{nws.img.url}}" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">{{nws.title}}</h5>
+          <h5 class="card-title">{{nws.title|truncatechars:5}}</h5>
           <p class="card-text">{{nws.description}}</p>
-          <p class="card-text">{{nws.created_at}}</p>
+          <p class="card-text">{{nws.created_at|date:"M Y"}}</p>
           <a href="{{ nws.get_absolute_url }}" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
+      {% empty %}
+      <h1>Xeber yoxdur</h1>
     {% endfor %}
     <!-- Optional JavaScript; choose one of the two! -->
 
