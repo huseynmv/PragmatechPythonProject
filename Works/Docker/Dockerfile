@@ -4,8 +4,8 @@ WORKDIR /code
 
 COPY . .
 
-RUN pip install -r requirements.txt
+RUN pip install -r req.txt
 
 ENV FLASK_APP=main.py
 
-CMD [ "flask", "run", "--host", "0.0.0.0", "-p", "5000"]
+# CMD [ "flask", "run", "--host", "0.0.0.0", "-p", "5000"]
