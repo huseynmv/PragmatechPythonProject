@@ -3,7 +3,7 @@ from redis import Redis
 
 
 app = Flask(__name__)
-redis_client = Redis(host='127.0.0.1', port = 5000)
+redis_client = Redis(host='redis_service', port = 6379)
 
 
 @app.route('/')
