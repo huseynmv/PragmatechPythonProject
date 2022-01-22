@@ -9,15 +9,9 @@ class BlogSerializer(serializers.Serializer):
     linenos = serializers.BooleanField(required=False)
     
     def create(self, validated_data):
-        """
-        Create and return a new `Snippet` instance, given the validated data.
-        """
         return Blog.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
-        """
-        Update and return an existing `Snippet` instance, given the validated data.
-        """
         instance.title = validated_data.get('title', instance.title)
         instance.author = validated_data.get('author', instance.author)
         instance.code = validated_data.get('code', instance.code)
