@@ -1,3 +1,4 @@
+from cgitb import lookup
 from django.http import Http404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -53,11 +54,11 @@ class UserList(generics.ListCreateAPIView):
     queryset = User.objects.all()
     serializer_class = Userserializer
     
-    def get(self, request, *args, **kwargs):
-        return self.list(request, *args, **kwargs)
-
-    def post(self, request, *args, **kwargs):
-        return self.create(request, *args, **kwargs)
+  
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = Userserializer
+    lookup_field = 'first_name'
 
 
 
