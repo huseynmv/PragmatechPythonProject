@@ -9,7 +9,7 @@ from rest_framework.views import APIView
 from rest_framework import permissions, generics
 
 class BlogListAPIView(APIView):
-    permission_classes = [permissions.IsAdminUser, ]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, ]
     def get(self, request):
         blog = Blog.objects.all()
         serializer = BlogSerializer(blog, many = True)

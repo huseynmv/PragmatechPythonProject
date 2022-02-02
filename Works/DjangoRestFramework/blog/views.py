@@ -6,6 +6,6 @@ from . models import Blog
 
 
 
-def  template_blogs(request):
+def template_blogs(request):
     blogs = Blog.objects.all()
     return render(request, 'blogs.html', {'blogs': blogs})
