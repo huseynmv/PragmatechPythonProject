@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     # my apps
     
-    'blog'
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +83,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+AUTH_USER_MODEL = 'blog.User'
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
