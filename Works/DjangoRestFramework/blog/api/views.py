@@ -5,8 +5,10 @@ from rest_framework import status
 from blog.api.serializers import BlogSerializer
 from blog.models import Blog
 from rest_framework.views import APIView
+from rest_framework import permissions
 
 class BlogListAPIView(APIView):
+    permission_classes = [permissions.IsAdminUser, ]
     def get(self, request):
         blog = Blog.objects.all()
         serializer = BlogSerializer(blog, many = True)
