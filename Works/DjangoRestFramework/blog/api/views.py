@@ -2,10 +2,10 @@ from django.http import Http404
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from blog.api.serializers import BlogSerializer
-from blog.models import Blog
+from blog.api.serializers import BlogSerializer, Userserializer
+from blog.models import Blog, User
 from rest_framework.views import APIView
-from rest_framework import permissions
+from rest_framework import permissions, generics
 
 class BlogListAPIView(APIView):
     permission_classes = [permissions.IsAdminUser, ]
@@ -47,6 +47,17 @@ class BlogDetailAPIView(APIView):
         blog = self.get_object(pk)
         blog.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+    
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = Userserializer
+    
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
 
 
 

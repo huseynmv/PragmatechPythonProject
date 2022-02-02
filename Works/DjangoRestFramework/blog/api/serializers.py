@@ -26,7 +26,7 @@ class Userserializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ('first_name',)
+        fields = ('first_name','last_name', 'email')
 
 class BlogSerializer(serializers.ModelSerializer):
     
