@@ -22,11 +22,11 @@ from blog.models import Blog, User
 
 
 
-class Userserializer(serializers.Serializer):
+class Userserializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ('__all__')
+        fields = ('first_name',)
 
 class BlogSerializer(serializers.ModelSerializer):
     
@@ -34,7 +34,7 @@ class BlogSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Blog
-        # exclude = ('id',)
-        fields = '__all__'
+        exclude = ('id',)
+        # fields = '__all__'
     
     
