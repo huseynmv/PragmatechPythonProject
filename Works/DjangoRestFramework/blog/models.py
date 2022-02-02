@@ -13,7 +13,7 @@ class User(AbstractUser):
 
 
 class Blog(models.Model):
-    author = models.CharField(max_length=100, blank=True, null=True)
+    author = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=100, blank=True, default='')
     code = models.TextField()

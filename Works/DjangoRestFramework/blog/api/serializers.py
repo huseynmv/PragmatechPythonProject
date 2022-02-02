@@ -1,6 +1,6 @@
 from dataclasses import field
 from rest_framework import serializers
-from blog.models import Blog
+from blog.models import Blog, User
 
 
 # class BlogSerializer(serializers.Serializer):
@@ -20,7 +20,17 @@ from blog.models import Blog
 #         instance.save()
 #         return instance
 
+
+
+class Userserializer(serializers.Serializer):
+    
+    class Meta:
+        model = User
+        fields = ('__all__')
+
 class BlogSerializer(serializers.ModelSerializer):
+    
+    author = Userserializer()
     
     class Meta:
         model = Blog
